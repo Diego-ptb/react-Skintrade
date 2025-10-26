@@ -16,3 +16,4 @@ describe('Validación del formulario de registro', () => {
     expect(contrasena.length >= 6).toBeFalse();
   });
 });
+//aa//
