@@ -7,7 +7,25 @@ export const initialProducts = [
   { id: 'ak-47-herencia', category: 'rifles', img: '/images/rifle1.webp', title: 'AK-47 | Herencia', description: 'AK-47 con estética envejecida y motivos grabados; transmite una sensación de tradición y potencia.' },
   { id: 'awp-asiimov', category: 'snipers', img: '/images/snipers1.webp', title: 'AWP | Asiimov', description: 'AWP Asiimov: diseño futurista en blanco, naranja y negro; uno de los skins más icónicos por su contraste y acabado gráfico.' },
   { id: 'recortado-entrada-analogica', category: 'escopetas', img: '/images/escopeta1.webp', title: 'Recortado | Entrada analógica', description: 'Escopeta con un acabado inspirado en arte digital y tonos fríos; un look moderno y original para partidas cercanas.' },
-  { id: 'neguev-deslumbrar', category: 'ligeras', img: '/images/ametralladoras1.webp', title: 'Néguev | Deslumbrar', description: 'Néguev con acabado brillante y detalles metálicos que captan la luz; diseño imponente para quienes buscan presencia en la partida.' }
+  { id: 'neguev-deslumbrar', category: 'ligeras', img: '/images/ametralladoras1.webp', title: 'Néguev | Deslumbrar', description: 'Néguev con acabado brillante y detalles metálicos que captan la luz; diseño imponente para quienes buscan presencia en la partida.' },
+  { id: 'm4a1-s-camuflaje-cibernetico', category: 'rifles', img: '/images/m4a1-s.png', title: 'M4A1-S | Camuflaje Cibernético', description: 'M4A1-S con un patrón geométrico digital en tonos azules y grises; diseño moderno y silencioso para jugadores tácticos.' },
+  { id: 'desert-eagle-crimson-web', category: 'pistolas', img: '/images/Desert-Crimson.png', title: 'Desert Eagle | Crimson Web', description: 'Pistola de gran calibre con una red carmesí sobre fondo negro; un clásico de alto impacto visual y letalidad.' },
+  { id: 'glock-18-neon-noir', category: 'pistolas', img: '/images/neo-neoir.png', title: 'Glock-18 | Neon Noir', description: 'Diseño ciberpunk con tonos fucsia y cian; ideal para quienes buscan destacar desde la ronda inicial.' },
+  { id: 'mac-10-ultravioleta', category: 'subfusiles', img: '/images/ultraviolet.png', title: 'MAC-10 | Ultravioleta', description: 'Subfusil compacto con acabado púrpura profundo y detalles negros; equilibrio entre estilo y agresividad.' },
+  { id: 'p90-astral', category: 'subfusiles', img: '/images/p90astral.png', title: 'P90 | Astral', description: 'P90 con motivos cósmicos y reflejos metálicos; su diseño brilla tanto como su cadencia de disparo.' },
+  
+  { id: 'famas-memoria-de-acero', category: 'rifles', img: '/images/commemoration.png', title: 'FAMAS | Memoria de Acero', description: 'Rifle FAMAS con acabado industrial y grabados metálicos; representa precisión y resistencia en el campo.' },
+  
+  { id: 'galil-eco', category: 'rifles', img: '/images/galileco.png', title: 'Galil AR | Eco', description: 'Rifle Galil con diseño ecológico en verde brillante y blanco; una fusión entre tecnología y naturaleza.' },
+  { id: 'scar-20-cazador-carmesí', category: 'snipers', img: '/images/scar_crimson.png', title: 'SCAR-20 | Cazador Carmesí', description: 'Francotirador semiautomático con acabado rojo intenso y patrón de caza; ideal para jugadores ofensivos de larga distancia.' },
+  { id: 'sawed-off-crimson-shell', category: 'escopetas', img: '/images/sawed.png', title: 'Recortada | Crimson Shell', description: 'Escopeta recortada con diseño rojo perlado y textura de metal quemado; brutal a corta distancia.' },
+  { id: 'xm1014-zafiro', category: 'escopetas', img: '/images/xm10.png', title: 'XM1014 | Zafiro', description: 'Automática XM1014 con patrón azul brillante y efecto nacarado; lujo y fuego rápido en un solo paquete.' },
+  { id: 'm249-tierra-de-nadie', category: 'ligeras', img: '/images/m2.png', title: 'M249 | Tierra de Nadie', description: 'Ametralladora con camuflaje desértico y acabado gastado; simboliza resistencia y poder sostenido.' },
+  { id: 'nova-fantasma', category: 'escopetas', img: '/images/ghost.png', title: 'Nova | Fantasma', description: 'Escopeta Nova con tonos grises translúcidos y brillo azulado; diseño etéreo para los amantes de lo sobrenatural.' },
+  { id: 'karambit-tigre-diente', category: 'cuchillos', img: '/images/tiger.png', title: 'Karambit | Diente de Tigre', description: 'Cuchillo Karambit con patrón amarillo y negro; uno de los diseños más icónicos por su agresividad visual.' },
+  { id: 'bayoneta-caso-endurecido', category: 'cuchillos', img: '/images/bayonet.png', title: 'Bayoneta | Caso Endurecido', description: 'Bayoneta clásica con acabado metalizado en tonos azulados; cada pieza única por su patrón de endurecido.' },
+  { id: 'ump-45-minotauro', category: 'subfusiles', img: '/images/mino.png', title: 'UMP-45 | Minotauro', description: 'UMP-45 con grabados de laberinto y detalles dorados; representa fuerza bruta y estrategia en combate cercano.' }
+
 ];
 
 export const precios = {
@@ -19,5 +37,20 @@ export const precios = {
   'AK-47 | Herencia': 32000,
   'AWP | Asiimov': 50000,
   'Recortado | Entrada analógica': 20000,
-  'Néguev | Deslumbrar': 40000
+  'Néguev | Deslumbrar': 40000,
+  'M4A1-S | Camuflaje Cibernético': 28000,
+  'Desert Eagle | Crimson Web': 45000,
+  'Glock-18 | Neon Noir': 23000,
+  'MAC-10 | Ultravioleta': 16000,
+  'P90 | Astral': 21000,
+  'FAMAS | Memoria de Acero': 19000,
+  'Galil AR | Eco': 17000,
+  'SCAR-20 | Cazador Carmesí': 24000,
+  'Recortada | Crimson Shell': 18500,
+  'XM1014 | Zafiro': 19500,
+  'M249 | Tierra de Nadie': 15000,
+  'Nova | Fantasma': 17500,
+  'Karambit | Diente de Tigre': 85000,
+  'Bayoneta | Caso Endurecido': 73000,
+  'UMP-45 | Minotauro': 20000
 };
