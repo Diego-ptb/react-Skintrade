@@ -66,12 +66,21 @@ body {
     align-items: center;
 }
 .nav {
-    /* Centrar horizontalmente las opciones del nav dentro del header */
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    /* Alinear las opciones del nav a la derecha dentro del header */
+    margin-left: auto;
     display: flex;
     gap: 12px;
+    align-items: center;
+}
+.wallet-in-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 6px; /* small gap before Catalog button */
+}
+.wallet-in-nav > div { /* target the inner wallet box */
+    padding: 6px 10px !important;
+    border-radius: 8px !important;
 }
 .logo {
     font-size: 2.2rem;
@@ -340,14 +349,63 @@ body {
 
 /* Modal y carrito (copied) */
 .modal {
-  display: none; position: fixed; inset: 0;
-  background: rgba(30,32,36,0.9); z-index: 1000;
+    display: none; position: fixed; inset: 0;
+    background: rgba(30,32,36,0.9); z-index: 1000;
 }
-.modal-content { background: rgba(30,32,36,0.95); border: 2px solid #00ffc8; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.45); max-width: 400px; margin: 10% auto; padding: 32px; text-align: center; color: #fff; position: relative; }
+.modal-content { background: rgba(30,32,36,0.95); border: 2px solid #00ffc8; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.45); max-width: 800px; width: 80%; margin: 5% auto; padding: 36px; text-align: center; color: #fff; position: relative; }
 .modal-content img { width: 100%; border-radius: 12px; margin-bottom: 15px; }
 .modal-content h2 { color: #00ffc8; font-size: 1.8rem; margin-bottom: 10px; text-shadow: 0 0 8px #00ffc844; }
 .modal-content p { font-size: 1.2rem; font-weight: bold; margin-bottom: 20px; color: #ffb300; }
 .modal-content button { padding: 12px 24px; border: none; border-radius: 8px; background: linear-gradient(90deg,#00ffc8 0%,#ffb300 100%); color: #232526; font-weight: bold; cursor: pointer; box-shadow: 0 2px 8px #00ffc844; transition: 0.3s; }
+
+/* Inline alert box shown inside modals or pages */
+.inline-alert {
+    background: #c92a2a; /* red */
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,80,80,0.2);
+    margin: 12px 0 18px 0;
+    font-weight: 700;
+}
+
+/* Wallet component styles (moved from inline in Wallet.jsx) */
+.wallet-root { margin-bottom: 12px; }
+.wallet-root.wallet-in-nav { display: inline-flex; align-items: center; margin-bottom: 0; }
+.wallet-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0,0,0,0.45);
+    padding: 8px 12px;
+    border-radius: 10px;
+    color: #fff;
+    border: 1px solid rgba(0,255,200,0.15);
+}
+.wallet-label { font-size: 12px; opacity: 0.9; }
+.wallet-amount { font-weight: 700; color: #00ffc8; }
+.wallet-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #fff;
+    padding: 6px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Top-up form inside modal */
+.topup-form { text-align: left; }
+.topup-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.topup-input { padding: 10px; border-radius: 8px; border: 1px solid #00ffc8; background: #232526; color: #fff; }
+.topup-input.full { grid-column: 1 / -1; }
+.topup-actions { margin-top: 18px; display: flex; gap: 12px; justify-content: center; }
+.topup-cancel { padding: 10px 18px; border-radius: 8px; background: transparent; color: #ffb300; border: 1px solid #ffb300; cursor: pointer; }
+.topup-submit { padding: 10px 18px; border-radius: 8px; background: linear-gradient(90deg, #00ffc8 0%, #ffb300 100%); color: #232526; border: none; cursor: pointer; }
+
+@media screen and (max-width: 600px) {
+    .modal-content { width: 95%; padding: 20px; }
+    .topup-form-grid { grid-template-columns: 1fr; }
+}
 .close { position: absolute; top: 12px; right: 20px; font-size: 28px; font-weight: bold; color: #ffb300; cursor: pointer; transition: 0.2s; }
 
 #cart { position: fixed; top: 20px; right: 20px; width: 300px; background: rgba(30,32,36,0.95); border: 2px solid #00ffc8; border-radius: 16px; padding: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.45); color: #fff; z-index: 999; }

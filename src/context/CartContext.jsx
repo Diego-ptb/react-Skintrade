@@ -4,7 +4,7 @@ const CartContext = createContext(null);
 const STORAGE_KEY = 'skintrade_cart_v1';
 
 export function CartProvider({ children }) {
-  // Cargar estado inicial desde localStorage (si existe)
+
   const [cart, setCart] = useState(() => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -21,7 +21,6 @@ export function CartProvider({ children }) {
 
   const total = useMemo(() => cart.reduce((s, p) => s + (p.precioProducto || p.price || 0), 0), [cart]);
 
-  // Persistir cambios en localStorage
   useEffect(() => {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
@@ -30,7 +29,6 @@ export function CartProvider({ children }) {
     }
   }, [cart]);
 
-  // Sincronizar cart entre pestañas (storage event)
   useEffect(() => {
     const onStorage = (e) => {
       if (e.key !== STORAGE_KEY) return;
