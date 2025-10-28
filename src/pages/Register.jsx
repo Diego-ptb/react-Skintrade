@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
   const [usuario, setUsuario] = useState('');
@@ -6,6 +7,10 @@ export default function Register() {
   const [contrasena, setContrasena] = useState('');
   const [repetir, setRepetir] = useState('');
   const [errores, setErrores] = useState([]);
+  const [loginUser, setLoginUser] = useState('');
+  const [loginPass, setLoginPass] = useState('');
+  const [loginError, setLoginError] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,14 +34,24 @@ export default function Register() {
         <div className="col-md-5 col-sm-10 mb-4">
           <div className="login-container">
             <h2>Iniciar sesión</h2>
-            <form>
+            <form onSubmit={(e) => {
+                e.preventDefault();
+                setLoginError('');
+                if (!loginUser.trim() || !loginPass.trim()) {
+                  setLoginError('Por favor completa usuario y contraseña.');
+                  return;
+                }
+                // Campos completos: redirigir a home
+                navigate('/');
+              }}>
               <div className="form-group">
                 <label htmlFor="login-usuario">Nombre de usuario</label>
                 <input
                   type="text"
                   id="login-usuario"
                   name="login-usuario"
-                  required
+                  value={loginUser}
+                  onChange={e => setLoginUser(e.target.value)}
                   autoComplete="off"
                 />
               </div>
@@ -46,10 +61,12 @@ export default function Register() {
                   type="password"
                   id="login-contrasena"
                   name="login-contrasena"
-                  required
+                  value={loginPass}
+                  onChange={e => setLoginPass(e.target.value)}
                   autoComplete="off"
                 />
               </div>
+              {loginError && <div style={{ color: '#ff4d4d', marginBottom: 12 }}>{loginError}</div>}
               <button type="submit" className="register-btn w-100">Iniciar sesión</button>
             </form>
           </div>

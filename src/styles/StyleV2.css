@@ -32,21 +32,15 @@
 }
 /* Footer ancho completo */
 .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background: rgba(30,32,36,0.98);
-  color: #fff;
-  text-align: center;
-  padding: 18px 0 10px 0;
-  box-shadow: 0 -2px 12px 0 #00ffc822;
-  font-size: 1rem;
-  z-index: 100;
-}
-body {
-    /* Reservar espacio para el footer fijo para que no tape contenido */
-    padding-bottom: 120px;
+    width: 100%;
+    background: rgba(30,32,36,0.98);
+    color: #fff;
+    text-align: center;
+    padding: 18px 0 18px 0;
+    box-shadow: 0 -2px 12px 0 #00ffc822;
+    font-size: 1rem;
+    /* allow footer to be pushed to bottom when using flex layout */
+    margin-top: auto;
 }
 /* Header SkinTrade */
 .header {
@@ -90,13 +84,30 @@ body {
     margin: 0;
     text-shadow: 0 0 8px #00ffc844;
 }
-body {
-  background: linear-gradient(120deg, #232526 0%, #414345 100%);
-  font-family: 'Segoe UI', Arial, sans-serif;
-  color: #fff;
-  min-height: 100vh;
-  margin: 0;
+/* Ensure root elements stretch so the flex layout can push the footer down */
+html, #root { height: 100%; }
+
+/* app-root is a top-level DOM wrapper inserted in App.jsx; make it a
+   column flex container so .main-content can expand and push the footer down */
+.app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
+/* Use flex layout to keep footer at the bottom of the page when content is short */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(120deg, #232526 0%, #414345 100%);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #fff;
+    margin: 0;
+}
+
+/* main content should expand to fill available space so footer stays at page bottom */
+.main-content { flex: 1 0 auto; display: flex; flex-direction: column; }
 
 
 .register-container h2 {
@@ -412,6 +423,33 @@ body {
 
 /* Reset y responsive rules kept as needed */
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Footer sections layout */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    align-items: start;
+}
+.footer-section {
+    text-align: left;
+}
+.footer-section h3 {
+    color: #00ffc8;
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+}
+.footer-section p {
+    color: #ddd;
+    line-height: 1.4;
+    font-size: 0.95rem;
+}
+.footer-section a { color: #ffb300; text-decoration: none; }
+.footer-section a:hover { text-decoration: underline; }
+
+@media screen and (max-width: 800px){
+    .footer-grid { grid-template-columns: 1fr; text-align: left; }
+}
 
 @media screen and (max-width: 900px){
   .category_list, .products-list { width: 100%; }

@@ -13,7 +13,9 @@ import '../styles/StyleV2.css';
 export default function App(){
   return (
     <BrowserRouter>
-      <InnerLayout />
+      <div className="app-root">
+        <InnerLayout />
+      </div>
     </BrowserRouter>
   );
 }
@@ -24,15 +26,17 @@ function InnerLayout(){
     <>
       <Header />
 
-      {/* mostrar carrito en todas las páginas excepto en /register */}
-      {location.pathname !== '/register' && <CartWidget />}
+      <main className="main-content">
+        {/* mostrar carrito en todas las páginas excepto en /register */}
+        {location.pathname !== '/register' && <CartWidget />}
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/catalogo" element={<Catalogo />} />
-        <Route path="/product/:id" element={<ProductDetail />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/catalogo" element={<Catalogo />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </main>
 
       <Footer />
     </>
